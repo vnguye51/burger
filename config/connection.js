@@ -3,11 +3,11 @@ require('dotenv').config()
 var mysql = require("mysql");
 
 var connection = mysql.createConnection({
-  host: "mysql://b5c147a9b4292e:6ad067d8@us-cdbr-iron-east-01.cleardb.net/heroku_27cf5591577f650?reconnect=true",
+  host: "us-cdbr-iron-east-01.cleardb.net",
   port: 3306,
-  user: "root",
-  password: null,
-  database: "burgers_db"
+  user: "b5c147a9b4292e",
+  password: process.env.PASSWORD,
+  database: "heroku_27cf5591577f650"
 });
 
 // Make connection.
