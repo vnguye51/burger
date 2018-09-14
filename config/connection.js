@@ -1,14 +1,19 @@
 // Set up MySQL connection.
 require('dotenv').config()
 var mysql = require("mysql");
-
-var connection = mysql.createConnection({
-  host: "us-cdbr-iron-east-01.cleardb.net",
+var connection;
+if (process.env.CLEARDB_DATABASE_URL){
+  connection = mysql.createConnection(process.env.CLEARDB_DATABASE_URL)
+}
+else{
+connection = mysql.createConnection({
+  host: "localhost",
   port: 3306,
-  user: process.env.USER,
-  password: process.env.PASSWORD,
-  database: process.env.DATABASE,
+  user: "root",
+  password: "Raymond12",
+  database: "burgers_db",
 });
+}
 
 // Make connection.
 connection.connect(function(err) {
