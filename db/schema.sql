@@ -1,9 +1,11 @@
 ### Schema
 
-DROP DATABASE IF EXISTS burgers_db;
-CREATE DATABASE burgers_db;
-USE burgers_db;
--- USE heroku_27cf5591577f650;
+-- DROP DATABASE IF EXISTS burgers_db;
+-- CREATE DATABASE burgers_db;
+-- USE burgers_db;
+USE heroku_27cf5591577f650;
+
+DROP TABLE burgers;
 
 CREATE TABLE burgers
 (
